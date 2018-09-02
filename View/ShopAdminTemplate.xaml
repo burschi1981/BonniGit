@@ -1,0 +1,53 @@
+﻿<UserControl x:Class="BonnyUI.View.ShopAdminTemplate"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BonnyUI.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <StackPanel Orientation="Horizontal" Margin="20">
+        <StackPanel DataContext="{Binding ShopAdmin}">
+        
+        <ListView ItemsSource="{Binding AllShops, Mode=OneWay}" SelectedItem="{Binding CurrentShop, Mode=TwoWay}" Width="500" HorizontalAlignment="Left">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Name" Width="100" DisplayMemberBinding="{Binding Name}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Name" Width="100"/>
+                <TextBox Text="{Binding CurrentShopName, UpdateSourceTrigger=PropertyChanged}" MinWidth="100"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Orientation="Vertical">
+            <Button Content="Als neues Geschäft anlegen" Command="{Binding SaveShopDatesAsNewCommand}"/>
+            <Button Content="Geänderte Daten speichern" Command="{Binding UpdateShopDatesCommand}"/>
+        </StackPanel>
+
+        </StackPanel>
+        <StackPanel DataContext="{Binding CategoryAdmin}">
+
+            <ListView ItemsSource="{Binding AllCategories, Mode=OneWay}" SelectedItem="{Binding CurrentCategory, Mode=TwoWay}" Width="100" HorizontalAlignment="Left">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Name" Width="100" DisplayMemberBinding="{Binding Name}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <StackPanel Orientation="Vertical">
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Name" Width="100"/>
+                    <TextBox Text="{Binding CurrentCategoryName, UpdateSourceTrigger=PropertyChanged}" MinWidth="100"/>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Vertical">
+                <Button Content="Als neue Kategorie anlegen" Command="{Binding SaveCategoryDatesAsNewCommand}"/>
+                <Button Content="Geänderte Daten speichern" Command="{Binding UpdateCategoryDatesCommand}"/>
+            </StackPanel>
+
+        </StackPanel>
+    </StackPanel>
+</UserControl>
