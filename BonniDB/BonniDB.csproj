@@ -52,7 +52,7 @@
     <Folder Include="EntityFramework\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\BonniModel\BonniModel.csproj">
+    <ProjectReference Include="..\BonniModel\BonniModel.csproj">
       <Project>{489931c7-e7d8-43b1-aa08-f21862edc3d4}</Project>
       <Name>BonniModel</Name>
     </ProjectReference>

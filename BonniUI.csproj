@@ -214,10 +214,6 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BonniModel\BonniModel.csproj">
-      <Project>{489931c7-e7d8-43b1-aa08-f21862edc3d4}</Project>
-      <Name>BonniModel</Name>
-    </ProjectReference>
     <ProjectReference Include="BonniViewModel\BonniViewModel.csproj">
       <Project>{0fada686-dc3b-4faa-b574-ecc2992a5d6d}</Project>
       <Name>BonniViewModel</Name>
