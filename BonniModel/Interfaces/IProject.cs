@@ -12,12 +12,19 @@ namespace BonnyUI
     /// </summary>
     public interface IProject
     {
+        /// <summary>
+        /// Alle Bons des Projekts
+        /// </summary>
         IList<IReceipt> Bons {get;set;}
 
+        /// <summary>
+        /// Alle Geschäfte des Projekts
+        /// </summary>
         IList<IShop> Shops { get; set; }
 
-        IList<ICategory> Categories { get; set; }
-
-        //void ReloadBons();
+        /// <summary>
+        /// Alle Kategorien des Projekts
+        /// </summary>
+        IList<ICategory> Categories { get; set; }        
     }
 }

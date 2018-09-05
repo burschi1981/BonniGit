@@ -9,10 +9,19 @@ using System.Threading.Tasks;
 
 namespace BonnyUI
 {
+    /// <summary>
+    /// Der gesamte Bon
+    /// </summary>
     public interface IReceipt : IHasCategories
     {
+        /// <summary>
+        /// Benutzer, der den Bon bezahlt hat
+        /// </summary>
         string User { get; set; }
 
+        /// <summary>
+        /// Betrag des Bons
+        /// </summary>
         double Amount { get; set; }
 
         DateTime? PayDate { get; set; }

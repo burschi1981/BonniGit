@@ -38,14 +38,9 @@ namespace BonnyUI
             if(vm != null)
             {
                 // Commands aus dem Viewmodel initiailisieren
-
             }
 
-            
-
             this.Closing += MainWindow_Closing;
-            
-
         }
 
        
