@@ -44,9 +44,13 @@ namespace BonnyUI.ViewModel
             _DBConnection = new DBConnector();
             
             LoadProject();
+
+
             _categoryAdmin = new CategoryAdminViewModel(_project.Categories, _DBConnection);
             _categoryAdmin.PropertyChanged -= ShopsChanged;
             _categoryAdmin.PropertyChanged += ShopsChanged;
+
+
             _shopAdmin = new ShopAdminViewModel(_project.Shops, _DBConnection);
             _shopAdmin.PropertyChanged -= ShopsChanged;
             _shopAdmin.PropertyChanged += ShopsChanged;
@@ -104,11 +108,19 @@ namespace BonnyUI.ViewModel
 
         // Erstellt ein neues Projekt zur Datenhaltung und befüllt Shops und Bons
         private void LoadProject()
-        {
-            //_project = new Project(_DBConnection);
+        {   
             _project = new Project();
+
+
+            // TODO: Laden der Daten in eigene Factory ausladen
+            
+            // Laden der Geschäfte
             _project.Shops = _DBConnection.GetAllShops();
+
+            // Laden der Kategorien
             _project.Categories = _DBConnection.GetAllCategories();
+
+            // Laden der Bons
             _project.Bons = _DBConnection.GetAllBons();
         }
         #endregion

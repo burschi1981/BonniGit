@@ -7,6 +7,9 @@ using BonniModel.Interfaces;
 
 namespace BonnyUI.Model
 {
+    /// <summary>
+    /// Projekt: Modelobjekt, dass die Liste der Bons, die Liste der Kategorien und die Liste der Geschäfte enthält
+    /// </summary>
     public class Project : IProject
     {
         #region private fields
@@ -18,11 +21,7 @@ namespace BonnyUI.Model
 
 
         #region ctor
-        //public Project(IDBConnector dbConnection)
-        //{
-        //    _dbConnection = dbConnection;
-        //}
-
+        
         public Project()
         { }
         #endregion
@@ -54,11 +53,7 @@ namespace BonnyUI.Model
         }
 
         #endregion
-
-
-        //public void ReloadBons()
-        //{
-            
-        //}
+        
+        
     }
 }
