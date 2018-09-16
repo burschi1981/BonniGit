@@ -54,6 +54,8 @@ namespace BonnyUI.ViewModel
             _shopAdmin = new ShopAdminViewModel(_project.Shops, _DBConnection);
             _shopAdmin.PropertyChanged -= ShopsChanged;
             _shopAdmin.PropertyChanged += ShopsChanged;
+
+
             _bonAdmin = new BonAdminViewModel(_project, _shopAdmin, _DBConnection);
         }
         #endregion

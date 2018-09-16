@@ -11,7 +11,7 @@ namespace BonnyUI.ViewModel
 {
     /// <summary>
     /// Viewmodel der Category-Admin
-    /// Hinzufügen und Ändern von Categories
+    /// Hinzufügen und Ändern von Kategorien
     /// </summary>
     public class CategoryAdminViewModel:ViewModelBase
     {

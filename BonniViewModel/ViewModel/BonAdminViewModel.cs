@@ -79,7 +79,7 @@ namespace BonnyUI.ViewModel
 
         private void BonsWereBalanced(object sender, PropertyChangedEventArgs e)
         {
-            if (e.PropertyName.Equals("Bons gespeichert"))
+            if (e.PropertyName.Equals("Bons gespeichert") || e.PropertyName.Equals("All Bons"))
                 ReloadBons();
         }
 

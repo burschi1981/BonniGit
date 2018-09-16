@@ -26,6 +26,8 @@ namespace BonnyUI.ViewModel
         private BonViewModel _currentBon;
 
         private ShopAdminViewModel _shopAdmin;
+
+        private bool _isFiltered;
         #endregion
 
 
@@ -59,7 +61,20 @@ namespace BonnyUI.ViewModel
         public ICommand BalanceBonsCommand { get; private set; }
         public ICommand MarkAllBonsCommand { get; private set; }
 
-        
+        public bool IsFiltered
+        {
+            get
+            {
+                return _isFiltered;   
+            }
+            set
+            {
+                _isFiltered = value;
+                RaisePropertyChanged("AllBons");
+            }
+        }
+
+
         public double SumMarc
         {
             get
