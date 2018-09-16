@@ -45,17 +45,17 @@ namespace BonnyUI.ViewModel
             
             LoadProject();
 
-
+            // Admin für Kategorien laden und mit Kategorien befüllen
             _categoryAdmin = new CategoryAdminViewModel(_project.Categories, _DBConnection);
             _categoryAdmin.PropertyChanged -= ShopsChanged;
             _categoryAdmin.PropertyChanged += ShopsChanged;
 
-
+            // Admin für Shop befüllen und mit Geschäften befüllen
             _shopAdmin = new ShopAdminViewModel(_project.Shops, _DBConnection);
             _shopAdmin.PropertyChanged -= ShopsChanged;
             _shopAdmin.PropertyChanged += ShopsChanged;
 
-
+            // BonAdmin laden, enthält ShopAdmin und Projekt
             _bonAdmin = new BonAdminViewModel(_project, _shopAdmin, _DBConnection);
         }
         #endregion
