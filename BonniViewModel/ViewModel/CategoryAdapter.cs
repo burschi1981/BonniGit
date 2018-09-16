@@ -11,9 +11,13 @@ using System.Windows.Input;
 
 namespace BonniViewModel.ViewModel
 {
+    /// <summary>
+    /// KategorieAdapter... liefert Kategorien für Bons und Zahlungen
+    /// </summary>
     public class CategoryAdapter : ViewModelBase
     {
         private IList<ICategory> _categories;
+
         private ObservableCollection<CategoryViewModel> _allCategories;
 
         private IDBConnector _dbConnection;
