@@ -45,8 +45,6 @@
     <Compile Include="Interfaces\IReceipt.cs" />
     <Compile Include="Interfaces\ICategory.cs" />
     <Compile Include="Interfaces\IPayment.cs" />
-    <Compile Include="Interfaces\IProject.cs" />
-    <Compile Include="Interfaces\IShop.cs" />
     <Compile Include="Model\Category.cs" />
     <Compile Include="Model\Constants.cs" />
     <Compile Include="Model\HasCategories.cs" />

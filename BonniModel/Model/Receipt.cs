@@ -10,21 +10,13 @@ namespace BonnyUI.Model
 {
     public class Receipt : HasCategories, IReceipt
     {
-        private DateTime? _settlementDate;
-        
-        private string _user;
-        private double _amount;
+        private DateTime? _settlementDate;        
         private DateTime? _payDate;
-        private string _paymentType;
-        private IList<IPayment> _payments;        
         private int? _id;
-        private string _details;
-        private IShop _shop;
-        private bool _settled;
-
+        
 
         #region Konstruktoren
-        public Receipt(int id, string user, DateTime? payDate, string paymentType, string details, double amount, IList<IPayment> payments, IShop shop, bool settled, DateTime? settlementdate) : base()
+        public Receipt(int id, string user, DateTime? payDate, string paymentType, string details, double amount, IList<IPayment> payments, Shop shop, bool settled, DateTime? settlementdate) : base()
         {
 
             ID = id;
@@ -62,49 +54,21 @@ namespace BonnyUI.Model
 
         #region public properties
 
-        public string User
-        {
-            get { return _user; }
-
-            set { _user = value; }
-        }
-
-
-        public double Amount
-        {
-            get { return _amount; }
-
-            set { _amount = value; }
-        }
-
-
-
+        public string User { get; set; }
+        
+        public double Amount { get; set; }
+        
         public DateTime? PayDate
         {
             get { return _payDate; }
 
             set { _payDate = value; }
         }
-
-
-        public IList<IPayment> Payments
-        {
-            get { return _payments; }
-
-            set { _payments = value; }
-        }
-
-
-
-        public string PaymentType
-        {
-            get { return _paymentType; }
-
-            set { _paymentType = value; }
-        }
-
-
-
+        
+        public IList<IPayment> Payments { get; set; }
+        
+        public string PaymentType { get; set; }
+        
         public int? ID
         {
             get { return _id; }
@@ -112,53 +76,17 @@ namespace BonnyUI.Model
             set { _id = value; }
         }
 
-        public string Details
-        {
-            get { return _details; }
+        public string Details { get; set; }
 
-            set { _details = value; }
-        }
-
-        public IShop Shop
-        {
-            get { return _shop; }
-
-            set { _shop = value; }
-        }
-
-
-        public bool Settled
-        {
-            get { return _settled; }
-
-            set { _settled = value; }
-        }
-
+        public Shop Shop { get; set; }
         
-
-
-
+        public bool Settled { get; set; }
+        
         public DateTime? SettlementDate
         {
             get { return _settlementDate; }
             set { _settlementDate = value; }
         }
-
-
-        //protected IList<ICategory> _categories;
-
-        //public IList<ICategory> Categories
-        //{
-        //    get
-        //    {
-        //        return _categories;
-        //    }
-
-        //    set
-        //    {
-        //        _categories = value;
-        //    }
-        //}
 
         #endregion
     }

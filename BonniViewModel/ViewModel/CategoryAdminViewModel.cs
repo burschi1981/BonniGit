@@ -1,4 +1,5 @@
 ﻿using BonniModel.Interfaces;
+using BonnyUI.DBConnection;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -22,7 +23,7 @@ namespace BonnyUI.ViewModel
         
         private string _currentCategoryName;
 
-        private IDBConnector _DBConnection;
+        private DBConnector _DBConnection;
 
         private IList<ICategory> _categories;
 
@@ -30,7 +31,7 @@ namespace BonnyUI.ViewModel
         #endregion
 
         #region Konstruktoren
-        public CategoryAdminViewModel(IList<ICategory> categorys, IDBConnector dbConnection)
+        public CategoryAdminViewModel(IList<ICategory> categorys, DBConnector dbConnection)
         {
              _categories = categorys;
             SaveCategoryDatesAsNewCommand = new ActionCommand(SaveCategoryDatesAsNew, CanUpdateCategoryDates);

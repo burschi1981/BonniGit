@@ -9,13 +9,14 @@ using System.Windows.Input;
 using BonnyUI.Model;
 using BonniModel.Interfaces;
 using BonniViewModel.ViewModel;
+using BonnyUI.DBConnection;
 
 namespace BonnyUI.ViewModel
 {
     public class BonViewModel: ViewModelBase
     {
         #region Fields
-        private IDBConnector _DBConnection;
+        private DBConnector _DBConnection;
         private bool _balance = false;
         private bool _editMode;
         private string _user = "";
@@ -43,7 +44,7 @@ namespace BonnyUI.ViewModel
 
 
         #region Konstruktoren
-        public BonViewModel(IReceipt bon, IDBConnector dbConnection)        
+        public BonViewModel(IReceipt bon, DBConnector dbConnection)        
         {
             _DBConnection = dbConnection;
             _bon = bon;

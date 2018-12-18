@@ -11,10 +11,10 @@ using BonnyUI.Model;
 
 namespace BonnyUI.DBConnection
 {
-    public class DBConnector : IDBConnector
+    public class DBConnector
     {
         #region private fields
-        private IList<IShop> _shops;
+        private IList<Shop> _shops;
         private IList<ICategory> _categories;
         private IList<IReceipt> _bons;
         private SqlConnection con;
@@ -36,7 +36,7 @@ namespace BonnyUI.DBConnection
             }
             con = new SqlConnection(setting.ConnectionString);
 
-            _shops = new List<IShop>();
+            _shops = new List<Shop>();
 
             _bons = new List<IReceipt>();
 
@@ -65,7 +65,7 @@ namespace BonnyUI.DBConnection
             return retval;
         }
 
-        public void ChangeShop(IShop shop)
+        public void ChangeShop(Shop shop)
         {
             string sql = "UPDATE Geschaeft SET Name = '" + shop.Name + "'Where ID = " + shop.ID.ToString();
             try
@@ -116,9 +116,9 @@ namespace BonnyUI.DBConnection
             con.Close();
         }
 
-        public IList<IShop> GetAllShops()
+        public IList<Shop> GetAllShops()
         {
-            IList<IShop> retval = new List<IShop>();
+            IList<Shop> retval = new List<Shop>();
             try
             {
                 con.Open();
@@ -178,7 +178,7 @@ namespace BonnyUI.DBConnection
                 while (reader.Read())
                 {
                     DateTime? payDate = reader["Datum"] as DateTime?;
-                    IShop shop = _shops.Where(x => x.ID.Equals((int)reader["idGeschaeft"])).FirstOrDefault();
+                    Shop shop = _shops.Where(x => x.ID.Equals((int)reader["idGeschaeft"])).FirstOrDefault();
                     double amount = Convert.ToDouble(reader["Gesamtbetrag"]);
                     string details = reader["Details"] as string;
                     string paymentType = reader["Zahlungstyp"] as string;
@@ -555,9 +555,9 @@ namespace BonnyUI.DBConnection
             return retval;
         }
 
-        private IList<IShop> ConnectionOpenendSoGetAllShops()
+        private IList<Shop> ConnectionOpenendSoGetAllShops()
         {
-            IList<IShop> retval = new List<IShop>();
+            IList<Shop> retval = new List<Shop>();
 
             string strSQL = "SELECT * FROM Geschaeft";
 
@@ -575,7 +575,7 @@ namespace BonnyUI.DBConnection
 
 
 
-                    IShop geschäft = new Shop(idAlsInt, name);
+                    Shop geschäft = new Shop(idAlsInt, name);
 
                     retval.Add(geschäft);
                 }

@@ -9,7 +9,6 @@ using System.Linq;
 using System.ComponentModel;
 using BonnyUI.DBConnection;
 using BonnyUI.Model;
-using BonniDB;
 
 namespace BonnyUI.ViewModel
 {
@@ -30,7 +29,7 @@ namespace BonnyUI.ViewModel
         private Project _project;
 
         // Die Verbindung zur DB
-        private IDBConnector _DBConnection;
+        private DBConnector _DBConnection;
 
         #endregion
         

@@ -7,13 +7,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using BonnyUI.Model;
+using BonnyUI.DBConnection;
 
 namespace BonnyUI.ViewModel
 {
     public class BonListViewModel : ViewModelBase
     {
         #region Fields
-        private IDBConnector _DBConnection;
+        private DBConnector _DBConnection;
 
         private IList<string> _allTypes = new List<string>() { Constants.PaymentTypes.PaidForBoth, Constants.PaymentTypes.PaidForSelf, Constants.PaymentTypes.PaidForTheOther };
 
@@ -34,7 +35,7 @@ namespace BonnyUI.ViewModel
 
         #region ctor
 
-        public BonListViewModel(IList<IReceipt> bons, ShopAdminViewModel shopAdmin, IDBConnector dbConnection)
+        public BonListViewModel(IList<IReceipt> bons, ShopAdminViewModel shopAdmin, DBConnector dbConnection)
         {
             this._DBConnection = dbConnection;
             this._bons = bons;

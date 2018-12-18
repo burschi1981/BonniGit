@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using BonnyUI.Model;
+using BonnyUI.DBConnection;
 
 namespace BonnyUI.ViewModel
 {
@@ -22,16 +23,16 @@ namespace BonnyUI.ViewModel
 
         private BonListViewModel _settledBons;
 
-        private IProject _project;
+        private Project _project;
 
-        IDBConnector _dbConnection;
+        DBConnector _dbConnection;
         #endregion
 
 
 
         #region ctor
 
-        public BonAdminViewModel(IProject project, ShopAdminViewModel shopAdmin, IDBConnector dbConnection)
+        public BonAdminViewModel(Project project, ShopAdminViewModel shopAdmin, DBConnector dbConnection)
         {
             _dbConnection = dbConnection;
             _project = project;
@@ -46,6 +47,7 @@ namespace BonnyUI.ViewModel
             IList<IReceipt> settledBons = _project.Bons.Where(x => x.Settled).ToList();
             _settledBons = new BonListViewModel(settledBons, shopAdmin, dbConnection);
         }
+
 
         #endregion
 

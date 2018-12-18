@@ -10,12 +10,12 @@ namespace BonnyUI.Model
     /// <summary>
     /// Projekt: Modelobjekt, dass die Liste der Bons, die Liste der Kategorien und die Liste der Geschäfte enthält
     /// </summary>
-    public class Project : IProject
+    public class Project
     {
         #region private fields
         //private IDBConnector _dbConnection;
         private IList<IReceipt> _bons;
-        private IList<IShop> _shops;
+        private IList<Shop> _shops;
         private IList<ICategory> _categories;
         #endregion
 
@@ -46,7 +46,7 @@ namespace BonnyUI.Model
             }
         }
 
-        public IList<IShop> Shops
+        public IList<Shop> Shops
         {
             get { return _shops; }
             set { _shops = value; }

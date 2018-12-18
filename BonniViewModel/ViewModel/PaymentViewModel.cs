@@ -5,15 +5,16 @@ using System.Text;
 using System.Threading.Tasks;
 using BonnyUI.Model;
 using BonniViewModel.ViewModel;
+using BonnyUI.DBConnection;
 
 namespace BonnyUI.ViewModel
 {
     public class PaymentViewModel : ViewModelBase //, IPayment
     {
-        private IDBConnector _DBConnection;
+        private DBConnector _DBConnection;
         private CategoryAdapter _categoryAdapter;
 
-        public PaymentViewModel(IPayment zahlung, IDBConnector dbConnection)
+        public PaymentViewModel(IPayment zahlung, DBConnector dbConnection)
         {
             _DBConnection = dbConnection;
             this._zahlung = zahlung;

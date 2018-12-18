@@ -8,6 +8,7 @@ using BonniModel.Interfaces;
 using System.Collections.ObjectModel;
 using BonnyUI;
 using System.Windows.Input;
+using BonnyUI.DBConnection;
 
 namespace BonniViewModel.ViewModel
 {
@@ -20,10 +21,10 @@ namespace BonniViewModel.ViewModel
 
         private ObservableCollection<CategoryViewModel> _allCategories;
 
-        private IDBConnector _dbConnection;
+        private DBConnector _dbConnection;
         
 
-        public CategoryAdapter(IList<ICategory> categories, IDBConnector dbConnection)
+        public CategoryAdapter(IList<ICategory> categories, DBConnector dbConnection)
         {
             _dbConnection = dbConnection;
             _categories = categories;

@@ -1,4 +1,5 @@
 ﻿using BonniModel.Interfaces;
+using BonnyUI.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -32,7 +33,7 @@ namespace BonnyUI
 
         int? ID { get; set; }
 
-        IShop Shop { get; set; }
+        Shop Shop { get; set; }
 
         string Details { get; set; }
 

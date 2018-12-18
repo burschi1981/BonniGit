@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BonnyUI.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,11 +13,11 @@ namespace BonnyUI.ViewModel
     public class ShopViewModel : ViewModelBase
     {   
         private string _name = "Penny";
-        private IShop _wrappedObject;
+        private Shop _wrappedObject;
         private int _iD;
 
         
-        public ShopViewModel(IShop shop)
+        public ShopViewModel(Shop shop)
         {
             this._wrappedObject = shop;
             this.Name = _wrappedObject.Name;
@@ -36,7 +37,7 @@ namespace BonnyUI.ViewModel
         /// <summary>
         /// ModelObjekt
         /// </summary>
-        public IShop WrappedObject
+        public Shop WrappedObject
         {
             get { return _wrappedObject; }
             set { _wrappedObject = value; }

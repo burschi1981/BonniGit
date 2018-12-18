@@ -10,9 +10,6 @@ namespace BonnyUI.Model
     public class Payment : HasCategories, IPayment
     {
         #region private fields
-        private double _amount;
-        private string _details;
-        private string _paymentType;
         private int? _id;
         #endregion
 
@@ -34,30 +31,15 @@ namespace BonnyUI.Model
         #endregion
 
 
-        public double Amount
-        {
-            get { return _amount; }
-
-            set { _amount = value; }
-        }
+        public double Amount { get; set; }
 
 
 
-        public string Details
-        {
-            get { return _details; }
-
-            set { _details = value; }
-        }
+        public string Details { get; set; }
 
 
 
-        public string PaymentType
-        {
-            get { return _paymentType; }
-
-            set { _paymentType = value; }
-        }
+        public string PaymentType { get; set; }
 
         public int? ID
         {

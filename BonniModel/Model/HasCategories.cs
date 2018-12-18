@@ -13,20 +13,9 @@ namespace BonniModel.Model
         {
             _categories = new List<ICategory>();
         }
-            protected IList<ICategory> _categories;
 
-        public IList<ICategory> Categories
-        {
-            get
-            {
-                return _categories;
-            }
+        protected IList<ICategory> _categories;
 
-            set
-            {
-                _categories = value;
-            }
-        }
-    }
-    
+        public IList<ICategory> Categories { get; set; }
+    }    
 }

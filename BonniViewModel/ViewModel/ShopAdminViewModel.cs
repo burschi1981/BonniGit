@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BonnyUI.DBConnection;
+using BonnyUI.Model;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -21,15 +23,15 @@ namespace BonnyUI.ViewModel
         
         private string _currentShopName;
 
-        private IDBConnector _DBConnection;
+        private DBConnector _DBConnection;
 
-        private IList<IShop> _shops;
+        private IList<Shop> _shops;
 
         private ShopViewModel _currentShop;
         #endregion
 
         #region Konstruktoren
-        public ShopAdminViewModel(IList<IShop> shops, IDBConnector dbConnection)
+        public ShopAdminViewModel(IList<Shop> shops, DBConnector dbConnection)
         {
              _shops = shops;
             SaveShopDatesAsNewCommand = new ActionCommand(SaveShopDatesAsNew, CanUpdateShopDates);
@@ -60,7 +62,7 @@ namespace BonnyUI.ViewModel
             }
         }
 
-        public IList<IShop> Shops
+        public IList<Shop> Shops
         {
             get { return _shops; }
             set
@@ -103,7 +105,7 @@ namespace BonnyUI.ViewModel
         {
             // Geschäfte laden:
             ObservableCollection<ShopViewModel> obs = new ObservableCollection<ShopViewModel>();
-            foreach (IShop shop in _shops)
+            foreach (Shop shop in _shops)
                 obs.Add(new ShopViewModel(shop));
             _allShops = obs;
             

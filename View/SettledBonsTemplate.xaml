@@ -8,10 +8,10 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <StackPanel Orientation="Vertical" Margin="20">
 
-        <StackPanel Orientation="Horizontal">
+        <!--<StackPanel Orientation="Horizontal">
             <CheckBox IsChecked="{Binding IsFiltered, Mode=Default}">Filtern</CheckBox>
             <ComboBox MouseEnter=""
-        </StackPanel>
+        </StackPanel>-->
                
         <StackPanel Orientation="Horizontal">
             <ListView ItemsSource="{Binding AllBons, Mode=OneWay}" SelectedItem="{Binding CurrentBon, Mode=TwoWay}" Height="200" Width="Auto" HorizontalAlignment="Left" SelectionMode="Single">
